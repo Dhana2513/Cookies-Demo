@@ -1,0 +1,41 @@
+<html>
+   <head>
+      
+      <script type = "text/javascript">
+      
+            function WriteCookie()
+            {
+              
+               document.cookie="name=" + "ddd";
+               document.write(getCookie("name") );
+            }
+      
+            function getCookie(cname) {
+                let name = cname + "=";
+                let ca = document.cookie.split(';');
+                
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    
+                    while (c.charAt(0) == ' ') {
+                      c = c.substring(1);
+                    }
+                    
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form name = "myform" action = "">
+         <input type = "button" value = "View Cookie" onclick = "WriteCookie();"/>
+      </form>
+   
+   </body>
+</html>
