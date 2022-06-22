@@ -19,6 +19,18 @@ var isMobile = {
     }
 };
 
+  var app = {
+    launchApp: function() {
+      window.location.replace("myapp://");
+      this.timer = setTimeout(this.openWebApp, 1000);
+    },
+
+    openWebApp: function() {
+      window.location.replace("http://itunesstorelink/");
+    }
+  };
+
+  app.launchApp();
 
 
 document.getElementById("demo").innerHTML = "Is IOS: " +isMobile.iOS() + "\n" + "Is Android : " +isMobile.Android()  ;
