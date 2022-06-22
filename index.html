@@ -26,7 +26,11 @@ var isMobile = {
     },
 
     openWebApp: function() {
-      window.location.replace("http://itunesstorelink/");
+        if(isMobile.iOS()) {
+            window.location.replace("https://apps.apple.com/za/app/momentum-multiply/id1474101180");
+        }else if(isMobile.Android() ) {
+               window.location.replace("https://play.google.com/store/apps/details?id=za.co.momentum.momentum.multiply&hl=en");
+        }
     }
   };
 
