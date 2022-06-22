@@ -1,41 +1,29 @@
+<!DOCTYPE html>
 <html>
-   <head>
-      
-      <script type = "text/javascript">
-      
-            function WriteCookie()
-            {
-              
-               document.cookie="name=" + "ddd";
-               document.write(getCookie("name") );
-            }
-      
-            function getCookie(cname) {
-                let name = cname + "=";
-                let ca = document.cookie.split(';');
-                
-                for(let i = 0; i < ca.length; i++) {
-                    let c = ca[i];
-                    
-                    while (c.charAt(0) == ' ') {
-                      c = c.substring(1);
-                    }
-                    
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            }
-      </script>
-      
-   </head>
-   
-   <body>
-   
-      <form name = "myform" action = "">
-         <input type = "button" value = "View Cookie" onclick = "WriteCookie();"/>
-      </form>
-   
-   </body>
+<body>
+<h1>Device Type check</h1>
+<center>
+<p id="demo"></p>
+</center>
+<script>
+
+var isMobile = {
+    Android: function() {
+        return /Android/i.test(navigator.userAgent);
+    },
+    iOS: function() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.iOS());
+    }
+};
+
+
+
+document.getElementById("demo").innerHTML = "Is IOS: " +isMobile.iOS() + "\n" + "Is Android : " +isMobile.Android()  ;
+
+</script>
+
+</body>
 </html>
